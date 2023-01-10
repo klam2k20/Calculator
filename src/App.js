@@ -76,6 +76,7 @@ function App() {
   }
 
   const clearHandler = () => {
+    setEqual(false);
     setInput('');
     setResult('');
     setOperator('');
