@@ -1,0 +1,12 @@
+.wrapper {
+    height: 80vh;
+    width: 50vh;
+    background: black;
+    border-radius: 2rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

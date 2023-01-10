@@ -1,0 +1,9 @@
+.display {
+    grid-column: 1/-1;
+    grid-row: 1/span 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    padding: 1rem;
+}
