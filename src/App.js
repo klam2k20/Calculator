@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+
 import './App.css';
 import Wrapper from './components/Wrapper';
 import Display from './components/Display';
@@ -10,22 +11,14 @@ function App() {
   const [operator, setOperator] = useState("");
   const [equal, setEqual] = useState(false);
 
-  useEffect(() => {
-    console.log(`INPUT: ${input}`);
-    console.log(`OP: ${operator}`);
-    console.log(`RES: ${result}\n`);
-  }, [input, result, operator]);
-
   const inputHandler = (e) => {
     const number = e.target.innerText;
     setEqual(false);
     if(equal) setResult('');
     if(number === '.') {
-      setInput((pre) => pre.includes('.') ? 
-                                      pre : 
-                                      pre ? 
-                                        pre.concat('.') : 
-                                        '0.');
+      setInput((pre) => pre.includes('.') ? pre : 
+                                            pre ? pre.concat('.') : 
+                                                  '0.');
     } else {
       setInput((pre) => {
         if(pre==='0' && number==='0') {
@@ -60,18 +53,19 @@ function App() {
       setEqual(true);
     }
     let calc;
+    const precision = result.length + input.length;
     switch (operator) {
       case '÷':
-        calc = String(parseFloat(result) / parseFloat(input));
+        calc = String(Number((parseFloat(result) / parseFloat(input)).toPrecision(precision)));
         break;
       case 'x':
-        calc = String(parseFloat(result) * parseFloat(input));
+        calc = String(Number((parseFloat(result) * parseFloat(input)).toPrecision(precision)));
         break;
       case '-':
-        calc = String(parseFloat(result) - parseFloat(input));
+        calc = String(Number((parseFloat(result) - parseFloat(input)).toPrecision(precision)));
         break;
       case '+':
-        calc = String(parseFloat(result) + parseFloat(input));
+        calc = String(Number((parseFloat(result) + parseFloat(input)).toPrecision(precision)));
         break;
       default:
         return
@@ -88,11 +82,23 @@ function App() {
   }
 
   const invertHandler = () => {
-
+    setEqual(false);
+    if(input) {
+      setInput((pre) => pre.charAt(0)==='-' ? pre.substring(1) : 
+                                              '-' + pre);
+    } else if(result){
+      setResult((pre) => pre.charAt(0)==='-' ? pre.substring(1) : 
+                                              '-' + pre);
+    }
   }
 
   const percentHandler = () => {
-
+    setEqual(false);
+    if(input) {
+      setInput((pre) => String(Number((parseFloat(pre)/100).toPrecision(pre.length))));
+    } else if(result){
+      setResult((pre) => String(Number((parseFloat(pre)/100).toPrecision(pre.length))));
+    }
   }
 
   return (
