@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import './App.css';
 import Wrapper from './components/Wrapper';
 import Display from './components/Display';
 import Button from './components/Button';
