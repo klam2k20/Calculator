@@ -1,7 +1,9 @@
 <p align="center">
     <img src="public/banner.png">
 </p>
+
 [Preview](https://klam2k20.github.io/Calculator/)
+
 ## Overview
 This is a basic calculator modeled after the iPhone calculator. It supports the four basic mathematical function: addition, multiplication and division as well as an invert and percent-conversion function. This is an extension on the Basic-Calculator project with a new UI.
 
