@@ -11,7 +11,7 @@ This is a basic calculator modeled after the iPhone calculator. It supports the 
 ### Prerequisites
 * npm
   ```sh
-  npm install -g npm
+  npm install -g yarn
   ```
 
 ### Installation
