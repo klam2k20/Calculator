@@ -9,7 +9,7 @@ This is a basic calculator modeled after the iPhone calculator. It supports the 
 
 ## Getting Started
 ### Prerequisites
-* npm
+* yarn
   ```sh
   npm install -g yarn
   ```
